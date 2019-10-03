@@ -40,7 +40,7 @@ describe('MyTube history endpoint', () => {
   it('gets the same record, which was posted', async () => {
     await MyTube.postHistory(testRecord);
     const response = await MyTube.getHistory();
-    const recordFromHistoryList = response.body.find(item => item.videoId === 'testId');
+    const recordFromHistoryList = response.body.find(item => item.videoId === 'testVideoId');
     delete recordFromHistoryList['id'];
     delete recordFromHistoryList['createdAt'];
     delete recordFromHistoryList['updatedAt'];
@@ -49,7 +49,7 @@ describe('MyTube history endpoint', () => {
   });
 
   afterAll(async () => {
-      const deleteTestData = 'DELETE FROM history WHERE videoId = \'testId\'';
+      const deleteTestData = 'DELETE FROM history WHERE videoId = \'testVideoId\'';
       con.query(deleteTestData, function(err) {
         if (err) { throw err; }
         console.log('Test data deleted');
