@@ -6,18 +6,21 @@ const mysql = require('mysql');
 describe('MyTube history endpoint', () => {
 
   const schema = joi.object().keys({
-    icon: joi.string(),
     id: joi.number,
-    name: joi.string(),
-    videoId: joi.string().alphanum(),
+    videoId: joi.string(),
+    title: joi.string(),
+    thumbnail: joi.string(),
+    createdAt: joi.string(),
+    updatedAt: joi.string(),
   });
   let con;
 
   beforeAll(async () => {
     con = mysql.createConnection({
+      database: "mytube",
       host: "localhost",
-      user: "yourusername",
-      password: "yourpassword"
+      user: "user",
+      password: "password"
     });
 
     con.connect(function (err) {

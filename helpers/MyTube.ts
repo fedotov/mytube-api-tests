@@ -3,7 +3,7 @@ import * as rp from 'request-promise';
 export class MyTube {
 
   private static basePath = 'http://localhost:3300';
-  private static historyPath = '/video/history';
+  private static historyPath = '/history';
   private static statusPath = '/status';
 
   static async status() {
