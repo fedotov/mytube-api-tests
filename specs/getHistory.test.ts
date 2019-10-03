@@ -51,8 +51,9 @@ describe('MyTube history endpoint', () => {
   afterAll(async () => {
       const deleteTestData = 'DELETE FROM history WHERE videoId = \'testVideoId\'';
       con.query(deleteTestData, function(err) {
-        if (err) { throw err; }
-        console.log('Test data deleted');
+        if (err) {
+          throw err;
+        }
       });
     });
 });
