@@ -1,0 +1,54 @@
+{
+  "name": "myTube",
+  "version": "0.0.1",
+  "description": "API tests for myTube service",
+  "license": "",
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "keywords": [
+    "API tests"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fedotov/mytube-api-tests.git"
+  },
+  "main": "runner.js",
+  "dependencies": {
+    "@hapi/joi": "^16.1.5",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^6.0.111",
+    "chai": "^4.2.0",
+    "jest-cli": "^24.9.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "mysql": "^2.17.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "source-map-support": "^0.5.13",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "typescript": "^3.6.2"
+  },
+  "runOptions": {
+    "testsFolder": "/specs"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "silent": false
+  },
+  "scripts": {
+    "lint": "tslint --project tsconfig.json --config tslint.json -t codeFrame",
+    "test": "node runner --runInBand env=local"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}

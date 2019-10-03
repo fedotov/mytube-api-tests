@@ -1,0 +1,68 @@
+{
+  "defaultSeverity": "error",
+  "extends": "./node_modules/tc-nodejs-core-services/tslint.json",
+  "jsRules": {
+    "max-line-length": {
+      "options": [
+        140
+      ]
+    }
+  },
+  "rules": {
+    "align": false,
+    "await-promise": [true, "Bluebird"],
+    "ban-types": {
+      "options": [
+        [
+          "Object",
+          "Avoid using the `Object` type. Did you mean `object`?"
+        ],
+        [
+          "Boolean",
+          "Avoid using the `Boolean` type. Did you mean `boolean`?"
+        ],
+        [
+          "Number",
+          "Avoid using the `Number` type. Did you mean `number`?"
+        ],
+        [
+          "String",
+          "Avoid using the `String` type. Did you mean `string`?"
+        ],
+        [
+          "Symbol",
+          "Avoid using the `Symbol` type. Did you mean `symbol`?"
+        ]
+      ]
+    },
+    "no-implicit-dependencies": [
+      true,
+      "dev"
+    ],
+    "no-invalid-this": false,
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-module",
+      "check-separator",
+      "check-rest-spread",
+      "check-type",
+      "check-typecast",
+      "check-type-operator",
+      "check-preblock"
+    ],
+    "space-before-function-paren": [
+      true,
+      {
+        "anonymous": "never",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "no-http-string": false,
+    "cyclomatic-complexity": false
+  },
+  "rulesDirectory": []
+}
