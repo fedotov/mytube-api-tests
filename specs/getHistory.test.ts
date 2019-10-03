@@ -33,13 +33,17 @@ describe('MyTube history endpoint', () => {
   it('returns data in correct format', async () => {
     const response = await MyTube.getHistory();
     const result = schema.validate(response.body[0]);
+
+    expect(result).toBeDefined();
   });
 
   it('gets the same record, which was posted', async () => {
     await MyTube.postHistory(testRecord);
     const response = await MyTube.getHistory();
     const recordFromHistoryList = response.body.find(item => item.videoId === 'testId');
-    recordFromHistoryList.delete('id');
+    delete recordFromHistoryList['id'];
+    delete recordFromHistoryList['createdAt'];
+    delete recordFromHistoryList['updatedAt'];
 
     expect(recordFromHistoryList).toEqual(testRecord);
   });
