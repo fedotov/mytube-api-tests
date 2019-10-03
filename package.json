@@ -46,7 +46,7 @@
   },
   "scripts": {
     "lint": "tslint --project tsconfig.json --config tslint.json -t codeFrame",
-    "test": "node runner --runInBand env=local"
+    "test": "jest"
   },
   "devDependencies": {
     "jest": "^24.9.0"
